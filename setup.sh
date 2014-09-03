@@ -1,6 +1,7 @@
 #!/bin/sh
 
 JETTY_VERSION="8.1.11.v20130520"
+#test change
 
 cd $OPENSHIFT_DATA_DIR
 
