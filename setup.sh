@@ -28,6 +28,6 @@ else
   rm -rf jetty/contexts/*
   rm -rf jetty/webapps
 
-  curl -L -o maven.xml "https://raw.githubusercontent.com/drinkit/jetty-openshift-java8/master/maven.xml"
+  curl -o maven.xml -L "https://raw.githubusercontent.com/pkolmykov/jetty-openshift-java8/master/maven.xml"
 
 fi
