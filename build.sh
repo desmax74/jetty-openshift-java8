@@ -1,3 +1,4 @@
+#!/bin/sh
 cd $OPENSHIFT_REPO_DIR
 
 export JAVA_HOME=/etc/alternatives/java_sdk_1.6.0
