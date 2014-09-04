@@ -16,7 +16,7 @@ else
     rm -rf java
   fi
 
-  wget -O java.tar.gz --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" ${JAVA_URL}
+  wget --progress=bar -O java.tar.gz --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" ${JAVA_URL}
 
   mkdir java
   tar -xf java.tar.gz -C java --strip-components=1
