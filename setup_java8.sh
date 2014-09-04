@@ -4,7 +4,7 @@ JAVA_URL="http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x6
 
 cd $OPENSHIFT_DATA_DIR
 
-if [ -d "java" ] && [ "`cat java/URL`" == $JAVA_URL ]; then
+if [ -d "java" ] && [ "`cat java/URL`" == ${JAVA_URL} ]; then
 
   echo "Java already installed"
 
@@ -24,7 +24,7 @@ else
 
 #  mv jetty-distribution-${JETTY_VERSION} jetty
 
-  echo $JAVA_URL > java/URL
+  echo ${JAVA_URL} > java/URL
 
 #  rm -rf jetty/contexts/*
 #  rm -rf jetty/webapps
