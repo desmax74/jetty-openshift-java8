@@ -1,6 +1,6 @@
 #!/bin/sh
 
-JETTY_VERSION="8.1.15.v20140411"
+JETTY_VERSION="9.2.2.v20140723"
 
 cd $OPENSHIFT_DATA_DIR
 
@@ -16,7 +16,7 @@ else
     rm -rf jetty
   fi
 
-  curl -o jetty.tar.gz "http://download.eclipse.org/jetty/stable-8/dist/jetty-distribution-${JETTY_VERSION}.tar.gz"
+  curl -o jetty.tar.gz "http://download.eclipse.org/jetty/stable-9/dist/jetty-distribution-${JETTY_VERSION}.tar.gz"
 
   tar -xf jetty.tar.gz
   rm jetty.tar.gz
@@ -28,6 +28,6 @@ else
   rm -rf jetty/contexts/*
   rm -rf jetty/webapps
 
-  wget "https://raw.github.com/openshift-quickstart/jetty-openshift-quickstart/master/maven.xml"
+  curl -L -o maven.xml "https://raw.githubusercontent.com/drinkit/jetty-openshift-java8/master/maven.xml"
 
 fi
