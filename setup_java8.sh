@@ -1,6 +1,6 @@
 #!/bin/sh
 
-JAVA_URL="http://download.oracle.com/otn-pub/java/jdk/8u11-b12/jdk-8u11-linux-x64.tar.gz"
+JAVA_URL="http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz"
 
 cd $OPENSHIFT_DATA_DIR
 
