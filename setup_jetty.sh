@@ -1,6 +1,6 @@
 #!/bin/sh
 
-URL="http://eclipse.org/downloads/download.php?file=/jetty/stable-9/dist/jetty-distribution-9.2.3.v20140905.tar.gz&r=1"
+URL="http://eclipse.org/downloads/download.php?file=/jetty/stable-9/dist/jetty-distribution-9.2.3.v20140905.tar.gz"
 
 cd ${OPENSHIFT_DATA_DIR:="~"}
 
@@ -16,7 +16,7 @@ else
     rm -rf jetty
   fi
 
-  curl -o jetty.tar.gz "${URL}"
+  wget -O jetty.tar.gz ${URL}
 
   tar -xf jetty.tar.gz -C jetty --strip-components=1
 
