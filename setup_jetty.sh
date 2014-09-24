@@ -16,7 +16,7 @@ else
     rm -rf jetty
   fi
 
-  curl -o jetty.tar.gz ${URL}
+  curl -o jetty.tar.gz "${URL}"
 
   tar -xf jetty.tar.gz -C jetty --strip-components=1
 
