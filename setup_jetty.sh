@@ -1,6 +1,6 @@
 #!/bin/sh
 
-URL="http://eclipse.org/downloads/download.php?file=/jetty/stable-9/dist/jetty-distribution-9.2.3.v20140905.tar.gz"
+URL="http://eclipse.org/downloads/download.php?file=/jetty/stable-9/dist/jetty-distribution-9.2.3.v20140905.tar.gz&r=1"
 
 cd ${OPENSHIFT_DATA_DIR:="~"}
 
