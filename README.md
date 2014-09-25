@@ -43,7 +43,7 @@ Stop script just kills the process with previously saved PID.
 ```sh
 #!/bin/bash
 
-curl --silent -L https:ithubusercontent.com///raw.gpkolmykov/jetty-openshift-java8/master/stop.sh | bash
+curl -s -L https://raw.githubusercontent.com/pkolmykov/jetty-openshift-java8/master/stop.sh | bash
 ```
 
 ##Configuring Maven POM file
