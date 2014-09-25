@@ -49,7 +49,7 @@ The main idea is to tell maven to use custom path of java compiler:
     <maven.compiler.fork>true</maven.compiler.fork>
 </properties>
 ```
-See full example [here](https://github.com/pkolmykov/jetty-openshift-java8/blob/master/sample/pom.xml)
+See full example [here](https://github.com/pkolmykov/jetty-openshift-java8/blob/master/sample/pom.xml).
 
 ##Additional Info
 ###Deployment
