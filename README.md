@@ -1,14 +1,13 @@
 # Jetty Java-8 QuickStart for OpenShift
 
-Even though OpenShift doesn't support java8 for this moment, this tools can help to use java8 with jetty in DIY cartridge
+Even though OpenShift doesn't support java8 for the  moment, this tools can help use java8 with jetty in DIY cartridge. 
 
-This is improved version of forked jetty-openshift-quickstart project.
-In this project was added jdk8 installation and configured maven and jetty using custom java path.
+This is an improved version of forked jetty-openshift-quickstart project. 
+JDK8 installation and configuration of maven and jetty using custom java path were added into the project.
 
 ## Installation
 
-Create new DIY application
-You can use the web UI or by executing the rhc command like this:
+Create new DIY application. You can use the web UI or by executing the rhc command like this:
 
     rhc app create jetty diy-0.1
     
@@ -25,10 +24,10 @@ curl -s ${URL}build.sh | bash
 curl -s ${URL}start.sh | bash
 ```
 ####java_setup.sh
-Will setup java8. Executed with link from jdk can be downloaded. Modify this link to use latest version.
+Will setup java8. Executed with link pointing to the location from which jdk can be downloaded. Modify this link to use latest version.
 
 ####jetty_setup.sh
-Will setup jetty. Executed with link from jdk can be downloaded. Modify this link to use latest version.
+Will setup jetty. Executed with link pointing to the location from which jdk can be downloaded. Modify this link to use latest version.
 
 ####build.sh
 Build script will download maven.xml config file to work with local repository.
@@ -43,7 +42,7 @@ Ensures the webapps directory links to our deployments directory with build war 
 Stop script just kills the process with previously saved PID.
 
 ##Configuring Maven POM file
-The main idea is to say maven to use custom path of java compiler
+The main idea is to tell maven to use custom path of java compiler:
 ```xml
 <properties>
     <maven.compiler.executable>${env.OPENSHIFT_DATA_DIR}java/bin/javac</maven.compiler.executable>
