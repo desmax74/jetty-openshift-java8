@@ -27,14 +27,7 @@ else
   tar -xf java.tar.gz -C java --strip-components=1
   rm java.tar.gz
 
-#  mv jetty-distribution-${JETTY_VERSION} jetty
-
   echo ${URL} > java/URL
-
-#  rm -rf jetty/contexts/*
-#  rm -rf jetty/webapps
-#
-#  curl -o maven.xml -L "https://raw.githubusercontent.com/pkolmykov/jetty-openshift-java8/master/maven.xml"
 
 fi
 
