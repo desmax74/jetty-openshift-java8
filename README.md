@@ -42,6 +42,16 @@ Ensures the webapps directory links to our deployments directory with build war 
 ###Stop script (stop.sh)
 Stop script just kills the process with previously saved PID.
 
+##Configuring Maven POM file
+The main idea is to say maven to use custom path of java compiler
+```
+<properties>
+                <maven.compiler.executable>${env.OPENSHIFT_DATA_DIR}java/bin/javac</maven.compiler.executable>
+                <maven.compiler.fork>true</maven.compiler.fork>
+</properties>
+```
+See full example [here](https://github.com/pkolmykov/jetty-openshift-java8/blob/master/sample/pom.xml)
+
 
 
 
