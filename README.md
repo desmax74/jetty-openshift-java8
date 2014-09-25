@@ -44,7 +44,7 @@ Stop script just kills the process with previously saved PID.
 
 ##Configuring Maven POM file
 The main idea is to say maven to use custom path of java compiler
-```
+```xml
 <properties>
                 <maven.compiler.executable>${env.OPENSHIFT_DATA_DIR}java/bin/javac</maven.compiler.executable>
                 <maven.compiler.fork>true</maven.compiler.fork>
