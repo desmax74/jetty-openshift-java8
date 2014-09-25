@@ -46,8 +46,8 @@ Stop script just kills the process with previously saved PID.
 The main idea is to say maven to use custom path of java compiler
 ```xml
 <properties>
-                <maven.compiler.executable>${env.OPENSHIFT_DATA_DIR}java/bin/javac</maven.compiler.executable>
-                <maven.compiler.fork>true</maven.compiler.fork>
+    <maven.compiler.executable>${env.OPENSHIFT_DATA_DIR}java/bin/javac</maven.compiler.executable>
+    <maven.compiler.fork>true</maven.compiler.fork>
 </properties>
 ```
 See full example [here](https://github.com/pkolmykov/jetty-openshift-java8/blob/master/sample/pom.xml)
