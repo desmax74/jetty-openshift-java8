@@ -1,4 +1,4 @@
-# Jetty Java8 QuickStart for OpenShift
+# Jetty Java-8 QuickStart for OpenShift
 
 Even though OpenShift doesn't support java8 for this moment, this tools can help to use java8 with jetty in DIY cartridge
 
@@ -30,12 +30,17 @@ Will setup java8. Executed with link from jdk can be downloaded. Modify this lin
 ####jetty_setup.sh
 Will setup jetty. Executed with link from jdk can be downloaded. Modify this link to use latest version.
 
-###build.sh
+####build.sh
 Build script will download maven.xml config file to work with local repository.
 Sets up required PATH configurations and environment variables and runs maven to print environment information and build the application using next command:
 ```sh
 mvn clean package -Popenshift -DskipTests
 ```
+####start.sh
+Ensures the webapps directory links to our deployments directory with build war file and starts Jetty (using jdk8) binding it to $OPENSHIFT_INTERNAL_IP and $OPENSHIFT_INTERNAL_PORT. Then it saved the PID of the process to pid file to provide information for stop script.
+
+###Stop script (stop.sh)
+Stop script just kills the process with previously saved PID.
 
 
 
