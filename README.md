@@ -24,6 +24,19 @@ curl -s ${URL}jetty_setup.sh | bash -s http://eclipse.org/downloads/download.php
 curl -s ${URL}build.sh | bash
 curl -s ${URL}start.sh | bash
 ```
+####java_setup.sh
+Will setup java8. Executed with link from jdk can be downloaded. Modify this link to use latest version.
+
+####jetty_setup.sh
+Will setup jetty. Executed with link from jdk can be downloaded. Modify this link to use latest version.
+
+###build.sh
+Build script will download maven.xml config file to work with local repository.
+Sets up required PATH configurations and environment variables and runs maven to print environment information and build the application using next command:
+```sh
+mvn clean package -Popenshift -DskipTests
+```
+
 
 
 
