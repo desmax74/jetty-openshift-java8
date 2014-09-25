@@ -9,19 +9,19 @@ fi
 
 cd $OPENSHIFT_DATA_DIR
 
-if [ -d "java" ] && [ "`cat java/URL`" == ${JAVA_URL} ]; then
+if [ -d "java" ] && [ "`cat java/URL`" == ${URL} ]; then
 
   echo "Java already installed"
 
 else
 
-  echo "Installing Java from ${JAVA_URL}"
+  echo "Installing Java from ${URL}"
 
   if [ -d "java" ]; then
     rm -rf java
   fi
 
-  wget --progress=bar -O java.tar.gz --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" ${JAVA_URL}
+  wget --progress=bar -O java.tar.gz --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" ${URL}
 
   mkdir java
   tar -xf java.tar.gz -C java --strip-components=1
@@ -29,7 +29,7 @@ else
 
 #  mv jetty-distribution-${JETTY_VERSION} jetty
 
-  echo ${JAVA_URL} > java/URL
+  echo ${URL} > java/URL
 
 #  rm -rf jetty/contexts/*
 #  rm -rf jetty/webapps
