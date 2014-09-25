@@ -1,6 +1,11 @@
 #!/bin/sh
+#http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz
 
-JAVA_URL="http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz"
+if [[ -z "$1" ]];then
+    echo "Usage: java_setup.sh [URL]"
+    exit -1
+  else URL=$1
+fi
 
 cd $OPENSHIFT_DATA_DIR
 
