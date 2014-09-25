@@ -12,4 +12,7 @@ You can use the web UI or by executing the rhc command like this:
 
     rhc app create jetty diy-0.1
     
+Once the application is created, clone it locally (if not cloned already) and edit the start and stop scripts in the .openshift/action_hooks directory. Then configure POM for using custom java path.
+
+
 
