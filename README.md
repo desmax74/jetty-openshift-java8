@@ -40,6 +40,20 @@ Ensures the webapps directory links to our deployments directory with build war 
 
 ###Stop script (stop.sh)
 Stop script just kills the process with previously saved PID.
+```sh
+#!/bin/bash
+
+# Ensure the previous startup succeeded and this actually exists.
+if [ -d "${OPENSHIFT_DATA_DIR}jetty" ]; then
+    cd ${OPENSHIFT_DATA_DIR}jetty
+
+    # Ensure the process is actually running.
+    if ps -p `cat jetty.pid` > /dev/null
+    then
+       kill `cat jetty.pid`
+    fi
+fi
+```
 
 ##Configuring Maven POM file
 The main idea is to tell maven to use custom path of java compiler:
