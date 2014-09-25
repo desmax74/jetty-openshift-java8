@@ -3,7 +3,7 @@
 Even though OpenShift doesn't support java8 for this moment, this tools can help to use java8 with jetty in DIY cartridge
 
 This is improved version of forked jetty-openshift-quickstart project.
-In this project was added jdk8 installation and running maven and jetty using this java.
+In this project was added jdk8 installation and configured maven and jetty using custom java path.
 
 ## Installation
 
@@ -51,6 +51,15 @@ The main idea is to say maven to use custom path of java compiler
 </properties>
 ```
 See full example [here](https://github.com/pkolmykov/jetty-openshift-java8/blob/master/sample/pom.xml)
+
+##Additional Info
+###Deployment
+Once the application is pushed, the scripts run maven build to produce a war file into the deployments directory. The directory is linked to Jetty webapps directory where Jetty expects (by default) war files be located. Afterward Jetty server is started.
+
+###Scripts location
+If you do not want to rely on our scripts just fork the repository and change the location of the scripts accordingly. Even if you do not trust Github enough, just replace the run commands with the actual content of the files, then the whole application even with deployment descriptors will be located in your repository with no reliance to third party services.
+
+
 
 
 
