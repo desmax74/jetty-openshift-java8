@@ -1,13 +1,16 @@
 #!/bin/sh
 cd $OPENSHIFT_REPO_DIR
 
+export M2=$OPENSHIFT_DATA_DIR/maven/bin
+export MAVEN_OPTS="-Xms384m -Xmx412m"
 export JAVA_HOME=$OPENSHIFT_DATA_DIR/java
-export M2_HOME=/etc/alternatives/maven-3.0
-export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
+export PATH=$JAVA_HOME/bin:$M2:$PATH
+
+#mvn -s settings.xml clean install
 
 
 if [ ! -f "${OPENSHIFT_DATA_DIR}maven.xml" ];then
     curl -o ${OPENSHIFT_DATA_DIR}maven.xml -L "https://raw.githubusercontent.com/pkolmykov/jetty-openshift-java8/master/maven.xml"
-fi    
-mvn --global-settings ${OPENSHIFT_DATA_DIR}maven.xml --version
-mvn --global-settings ${OPENSHIFT_DATA_DIR}maven.xml clean package -Popenshift -DskipTests
+fi
+mvn -s ${OPENSHIFT_DATA_DIR}maven.xml --version
+mvn -s ${OPENSHIFT_DATA_DIR}maven.xml clean install -Popenshift -DskipTests
